@@ -29,14 +29,12 @@ input{
   }
   .v>*{
     flex: 1 1 auto;
-    outline: 1px solid #FFF;
     }
 .h{
   display: flex;
   flex-direction: row;
   }
   .h>*{
-    outline: 1px solid #FFF;
     flex: 1 1 auto;
     }
 
@@ -163,3 +161,9 @@ input{
 .clapper{
   background: #CCC;
   }
+
+
+/* borders */
+.chapter, .camera, .production{border-right: 1px solid #FFF;}
+.timer,.meta,.misc{border-top: 1px solid #FFF;}
+
