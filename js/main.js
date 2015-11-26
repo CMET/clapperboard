@@ -1,4 +1,4 @@
-/* globals angular, moment */
+/* globals angular, moment, screenfull */
 
 'use strict';
 angular.module('clapperboard', ['hmTouchEvents','ngStorage'])
@@ -32,6 +32,12 @@ angular.module('clapperboard', ['hmTouchEvents','ngStorage'])
         $scope.$storage[key] = 0;
       }else{
         $scope.$storage[key] --;
+      }
+    };
+
+    $scope.fullscreen = function(){
+      if (screenfull.enabled) {
+        screenfull.toggle();
       }
     };
 

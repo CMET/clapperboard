@@ -1,9 +1,10 @@
 CACHE MANIFEST
-# version 20151126 10
+# version 20151126 20
 CACHE:
 /index.html
 /css/digital-7 (mono italic).ttf
 /css/main.css
+/node_modules/screenfull/dist/screenfull.js
 /node_modules/moment/min/moment-with-locales.min.js
 /node_modules/hammerjs/hammer.min.js
 /node_modules/angular/angular.min.js
