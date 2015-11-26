@@ -54,23 +54,24 @@ angular.module('clapperboard', ['hmTouchEvents','ngStorage'])
       restrict: 'E',
       replace: true,
       scope: true,
-      template: '<div class="timer"></div>',
+      template: '<div class="timer"><span></span></div>',
       link: function(scope,element){
-        var update = function(){
-          var string = moment().format('hh:mm:ss.SS');
-          element.text(string);
-        };
         var interval;
         var paused = true;
+        var span = element.find('span');
+        var update = function(){
+          span.text(moment().format('hh:mm:ss.SS'));
+          interval = window.requestAnimationFrame(update);
+        };
         scope.pause = function(){{
-          clearInterval(interval);
+          window.cancelAnimationFrame(interval);
           paused = true;
         }};
         scope.resume = function(){{
-          interval = setInterval(update,10);
+          interval = window.requestAnimationFrame(update);
           paused = false;
         }};
-        update();
+        span.text(moment().format('hh:mm:ss.SS'));
         element.on('click',function(){
           if(paused){
             scope.resume();
