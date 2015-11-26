@@ -1,8 +1,9 @@
 CACHE MANIFEST
-# version 20151126 20
+# version 20151126 30
 CACHE:
 /index.html
-/css/digital-7 (mono italic).ttf
+/clapper.mp3
+/css/Digital Dismay.otf
 /css/main.css
 /node_modules/screenfull/dist/screenfull.js
 /node_modules/moment/min/moment-with-locales.min.js
