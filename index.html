@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="clapperboard">
 <head>
 	<title>Clapperboard</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-<div class="clapperboard">
+<body ng-cloak>
+<div class="clapperboard v" ng-controller="clapperboardCtrl">
+  <clapper></clapper>
+  <div class="title h">
+    <div class="production"><input placeholder="Production" ng-model="$storage.production"></div>
+    <div class="director"><input placeholder="Director" ng-model="$storage.director"></div>
+  </div>
+  <timer></timer>
+  <div class="meta h">
+    <div class="chapter"><input placeholder="Chapter" ng-model="$storage.chapter"></div>
+    <div class="camera"><input placeholder="camera" ng-model="$storage.camera"></div>
+    <div hm-swipeup="up('take')" hm-swipedown="down('take')" class="take"><input placeholder="take" type="number" ng-model="$storage.take"></div>
+  </div>
+  <div class="date">{{date}}</div>
 </div>
+<script src="node_modules/moment/min/moment-with-locales.min.js"></script>
+<script src="node_modules/hammerjs/hammer.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-hammer/angular.hammer.min.js"></script>
+<script src="node_modules/ngstorage/ngStorage.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
