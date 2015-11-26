@@ -2,7 +2,8 @@
 
 'use strict';
 angular.module('clapperboard', ['hmTouchEvents','ngStorage'])
-  .config(function(){
+  .config(function($localStorageProvider){
+    $localStorageProvider.setKeyPrefix('clapperboard');
     moment.locale('zh-cn');
   })
   .controller('clapperboardCtrl',function($scope, $localStorage){
