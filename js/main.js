@@ -74,7 +74,7 @@ angular.module('clapperboard', ['hmTouchEvents','ngStorage'])
         var paused = true;
         var span = element.find('span');
         var update = function(){
-          span.text(moment().format('hh:mm:ss.SS'));
+          span.text(moment().format('HH:mm:ss.SS'));
           interval = window.requestAnimationFrame(update);
         };
         scope.pause = function(){{
@@ -85,7 +85,7 @@ angular.module('clapperboard', ['hmTouchEvents','ngStorage'])
           interval = window.requestAnimationFrame(update);
           paused = false;
         }};
-        span.text(moment().format('hh:mm:ss.SS'));
+        span.text(moment().format('HH:mm:ss.SS'));
         element.on('click',function(){
           if(paused){
             scope.resume();
