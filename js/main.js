@@ -46,10 +46,7 @@ angular.module('clapperboard', ['hmTouchEvents','ngStorage'])
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="clapper"><div class="top"></div><div class="bottom"></div></clapper>',
-      link:function(element, scope){
-        // console.log(scope);
-      }
+      template: '<div class="clapper"><div class="top"></div><div class="bottom"></div>'
     };
   })
   .directive('timer',function(){
