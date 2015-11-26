@@ -46,7 +46,21 @@ angular.module('clapperboard', ['hmTouchEvents','ngStorage'])
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="clapper"><div class="top"></div><div class="bottom"></div>'
+      template: function(tElem, tAttrs){
+        return '<div class="clapper"><audio id="audio" src="'+ tAttrs.src+'" preload="auto"/></div>';
+      },
+      link:function(scope, iElem){
+        var audio = iElem.find('audio')[0];
+        iElem.on('click',function(){
+          setTimeout(function(){
+            iElem.addClass('animate');
+          },0);
+          setTimeout(function(){
+            audio.play();
+            iElem.removeClass('animate');
+          }, 240);
+        });
+      }
     };
   })
   .directive('timer',function(){

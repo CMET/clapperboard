@@ -3,6 +3,20 @@
   src: url("Digital Dismay.otf") format('opentype');
   }
 
+@keyframes clap {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  50% {
+    transform: rotateZ(-20deg);
+  }
+
+  100%{
+    transform: rotateZ(0deg);
+  }
+}
+
 html,body{
   background: #000;
   color: #FFF;
@@ -60,6 +74,10 @@ input{
     background: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0, 0)), linear-gradient(to right top, #000 0, #000 30%, #FFF 30%, #FFF 50%, #000 50%, #000 80%, #FFF 80%);
     background-position: 0 100%;
     background-size: 100px 100px;
+    transform-origin: 0 100%;
+    }
+  .clapper.animate::before{
+    animation: clap 0.3s ease-in-out;
     }
   .clapper::after{
     position: absolute;
