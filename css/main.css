@@ -115,7 +115,7 @@ input{
 .timer{
   position: relative;
   flex: 6 1 0;
-  font: 200px 'digital';
+  font: 18vw 'digital';
   width: 100%;
   height: 100%;
   }
