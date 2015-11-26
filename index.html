@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="clapperboard" manifest="/cache.manifest">
+<head>
+	<title>Clapperboard</title>
+  <meta charset="utf-8" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" sizes="196x196" href="icon-196x196.png">
+  <link rel="icon" sizes="128x128" href="icon-128x128.png">
+  <link rel="apple-touch-icon-precomposed" sizes="128x128" href="apple-icon-128x128.png">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-cloak>
+<div class="clapperboard v" ng-controller="clapperboardCtrl">
+  <clapper src="clapper.mp3"></clapper>
+  <div class="title h">
+    <div class="production"><input placeholder="Production" ng-model="$storage.production"></div>
+    <div class="director"><input placeholder="Director" ng-model="$storage.director"></div>
+  </div>
+  <timer></timer>
+  <div class="meta h">
+    <div class="chapter"><input placeholder="Chapter" ng-model="$storage.chapter"></div>
+    <div hm-swipeup="up('camera')" hm-swipedown="down('camera')" class="camera"><input placeholder="camera" ng-model="$storage.camera"></div>
+    <div hm-swipeup="up('take')" hm-swipedown="down('take')" class="take"><input placeholder="take" type="number" ng-model="$storage.take"></div>
+  </div>
+  <div class="misc h">
+    <div class="date">{{date}}</div>
+    <div hm-tap="fullscreen()" class="fullscreen"></div>
+  </div>
+</div>
+<script src="node_modules/screenfull/dist/screenfull.js"></script>
+<script src="node_modules/moment/min/moment-with-locales.min.js"></script>
+<script src="node_modules/hammerjs/hammer.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-hammer/angular.hammer.min.js"></script>
+<script src="node_modules/ngstorage/ngStorage.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

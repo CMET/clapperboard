@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# version 20151126 30
+CACHE:
+/index.html
+/clapper.mp3
+/css/Digital Dismay.otf
+/css/main.css
+/node_modules/screenfull/dist/screenfull.js
+/node_modules/moment/min/moment-with-locales.min.js
+/node_modules/hammerjs/hammer.min.js
+/node_modules/angular/angular.min.js
+/node_modules/angular-hammer/angular.hammer.min.js
+/node_modules/ngstorage/ngStorage.min.js
+/js/main.js
+NETWORK:
+*

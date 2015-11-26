@@ -1,0 +1,205 @@
+@font-face{
+  font-family: 'digital';
+  src: url("Digital Dismay.otf") format('opentype');
+  }
+
+@keyframes clap {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  50% {
+    transform: rotateZ(-20deg);
+  }
+
+  100%{
+    transform: rotateZ(0deg);
+  }
+}
+
+html,body{
+  background: #000;
+  color: #FFF;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+  }
+*{
+  box-sizing: border-box;
+  }
+input{
+  font: inherit;
+  color: #FFF;
+  background: none;
+  border: none;
+  width: 100%;
+  }
+
+.v{
+  display: flex;
+  flex-direction: column;
+  }
+  .v>*{
+    flex: 1 1 auto;
+    }
+.h{
+  display: flex;
+  flex-direction: row;
+  }
+  .h>*{
+    flex: 1 1 auto;
+    }
+
+.clapperboard{
+  height: 100%;
+  overflow: hidden;
+  }
+
+
+
+
+.clapper{
+  flex: 0 0 100px;
+  height: 100px;
+  position: relative;
+  }
+  .clapper::before{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 50px;
+    content: ' ';
+    background: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0, 0)), linear-gradient(to right top, #000 0, #000 30%, #FFF 30%, #FFF 50%, #000 50%, #000 80%, #FFF 80%);
+    background-position: 0 100%;
+    background-size: 100px 100px;
+    transform-origin: 0 100%;
+    }
+  .clapper.animate::before{
+    animation: clap 0.3s ease-in-out;
+    }
+  .clapper::after{
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 50px;
+    content: ' ';
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.4)), linear-gradient(to right bottom, #000 0, #000 30%, #FFF 30%, #FFF 50%, #000 50%, #000 80%, #FFF 80%);
+    background-position: 0 0 ;
+    background-size: 100px 100px;
+    }
+.production{
+  position: relative;
+  flex: 3 1 0;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  }
+  .production input{
+    text-align: center;
+    }
+.director{
+  position: relative;
+  flex: 1 1 0;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  }
+  .director input{
+    text-align: center;
+    }
+.meta{
+  flex: 6 1 0;
+  }
+.timer{
+  position: relative;
+  flex: 6 1 0;
+  font: 18vw 'digital';
+  width: 100%;
+  height: 100%;
+  }
+  .timer span{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: auto; height: auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F00;
+    text-shadow: 0 0 30px #F00;
+    }
+  .timer::before{
+    content: '88:88:88.88';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: auto; height: auto;
+    z-index: 0;
+    opacity: 0.2;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+.misc{
+  flex: 2 1 0;
+  position: relative;
+  }
+.date{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  }
+.fullscreen{
+  position: absolute;
+  top: 50%; right: 15px;
+  margin-top: -20px;
+  width: 40px; height: 40px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 100%;
+  }
+.chapter,.camera,.take{
+  display: flex;
+  position: relative;
+  flex: 1 1 auto;
+  align-items: center;
+  font-size: 140px;
+  }
+  .chapter input,.camera input,.take input{
+    text-align: center;
+    }
+  .chapter::after,
+  .camera::after,
+  .take::after,
+  .director::after,
+  .production::after{
+    content: 'Chapter';
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 .5em;
+    background: rgba(255,255,255, 0.3);
+    color: #000;
+    border-radius: 0 0 .5em 0;
+    }
+    .camera::after{
+      content: 'Camara';
+      }
+    .take::after{
+      content: 'Take';
+      }
+    .production::after{
+      content: 'Production';
+      }
+    .director::after{
+      content: 'Director';
+      }
+
+
+/* borders */
+.chapter, .camera, .production{border-right: 1px solid #FFF;}
+.timer,.meta,.misc{border-top: 1px solid #FFF;}
+
